@@ -129,7 +129,9 @@ class LMRTFYRoller extends Application {
         for (let actor of this.actors) {
             Hooks.once("preCreateChatMessage", this._tagMessage.bind(this));
             if(game.system.id=="pf2e") {
-                actor[rollMethod].call(actor, fakeEvent, ...args);                        
+                actor[rollMethod].call(actor, fakeEvent, ...args);
+            } else if(game.system.id=="pf1") {
+                actor[rollMethod].call(actor, ...args, { event: fakeEvent });
             } else {
                 actor[rollMethod].call(actor, ...args, { event: fakeEvent });                        
             }

@@ -25,6 +25,18 @@ class LMRTFY {
             LMRTFY.disadvantageRollEvent = { shiftKey: false, altKey: true, ctrlKey: false };
             LMRTFY.queryRollEvent = { shiftKey: true, altKey: false, ctrlKey: false };
             LMRTFY.specialRolls = { 'initiative': true, 'deathsave': true, 'perception': true };
+        } else if (game.system.id == "pf1") {
+            LMRTFY.saveRollMethod = 'rollSavingThrow';
+            LMRTFY.abilityRollMethod = 'rollAbility';
+            LMRTFY.skillRollMethod = 'rollSkill';
+            LMRTFY.abilities = CONFIG.PF1.abilities;
+            LMRTFY.skills = CONFIG.PF1.skills;
+            LMRTFY.saves = CONFIG.PF1.savingThrows;
+            LMRTFY.normalRollEvent = {shiftKey: false, altKey: false, ctrlKey: false};
+            LMRTFY.advantageRollEvent = {shiftKey: false, altKey: false, ctrlKey: true};
+            LMRTFY.disadvantageRollEvent = {shiftKey: false, altKey: true, ctrlKey: false};
+            LMRTFY.queryRollEvent = {shiftKey: true, altKey: false, ctrlKey: false};
+            LMRTFY.specialRolls = {'initiative': true, 'deathsave': true, 'perception': true};
         } else {
             LMRTFY.saveRollMethod = 'rollAbilitySave';
             LMRTFY.abilityRollMethod = 'rollAbilityTest';
